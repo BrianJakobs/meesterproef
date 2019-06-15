@@ -1,0 +1,427 @@
+/*
+========================================
+Reset
+========================================
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 1em;
+    font: inherit;
+    vertical-align: baseline;
+    box-sizing: border-box;
+    border-collapse: collapse;
+}
+
+:root {
+    font-size: 1em;
+}
+
+body {
+    line-height: 1;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/*
+========================================
+Typo Styling
+========================================
+*/
+
+
+h1 {
+    Font-Family: 'Permanent Marker', Cursive;
+    font-size: 3em;
+}
+
+h2 {
+    Font-Family: 'Permanent Marker', Cursive;
+    font-size: 2em;
+    margin-bottom: 1em;
+}
+
+h3 {
+    Font-Family: 'Permanent Marker', Cursive;
+    font-size: 1.5em;
+}
+
+h4 {
+    Font-Family: 'Overpass', Sans-Serif;
+    font-size: 0.9em;
+}
+
+p {
+    font-family: 'Neuton', serif;
+    Font-Family: 'Overpass', Sans-Serif;
+    font-size: 1em;
+    line-height: 1.2em;
+    letter-spacing: 0.01em;
+}
+
+/*
+========================================
+Sections Styling
+========================================
+*/
+
+.wrapper {
+    display: grid;
+    grid-template-columns: 2vw 1fr 1fr 1fr 1fr 1fr 1fr 2vw;
+    grid-column-gap: 10px;
+    overflow-x: hidden;
+}
+
+.background {
+    display: block;
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    background-color: grey;
+    background-size: cover;
+    z-index: -1;
+    grid-column: 1/9;
+}
+
+/*
+========================================
+Parallax Animation
+========================================
+*/
+
+main .show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.sideScroll.fixed {
+    position: fixed
+}
+
+#white-space .bottom {
+    position: absolute;
+    bottom: 0;
+    top: auto;
+}
+
+/*
+========================================
+Header Styling
+========================================
+*/
+
+header {
+    display: block;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    grid-column: 1/9;
+    height: 100vh;
+    width: 100%;
+    background-color: #000;
+}
+
+.background {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: url(assets/images/background.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 0;
+    opacity: 0.6;
+    box-shadow: inset 0 0 10em 1em rgba(0,0,0,0.75);
+}
+
+header h1 {
+    position: absolute;
+    font-size: 3vw;
+    max-width: 25%;
+    z-index: 2;
+}
+
+.center {
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    overflow: hidden;
+}
+
+
+/*
+========================================
+Header SVG Styling
+========================================
+*/
+
+svg #panel1-lamp {
+    transform-origin: 50% -65px;
+    animation: swing 1.5s infinite alternate ease-in-out;
+}
+
+@keyframes swing {
+  0% { transform: rotate(-3deg) }
+  100% { transform: rotate(3deg) }
+}
+
+header > svg {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    fill: black;
+    z-index: 100;
+}
+
+.center svg  {
+    width: 60%;
+}
+
+#panel1-tafel,
+#panel1-karakter2-lijn path,
+#panel1-karakter1-lijn path,
+#panel1-lamp-lijn path {
+    fill: none;
+    stroke: black;
+    stroke-width: 4px;
+    stroke-linecap: round;
+}
+
+svg #panl1-karakter1-shirt path {
+    fill: rgba(230, 35, 35, 1);
+}
+
+svg #panel1-lamp-licht path {
+    fill: url(#panel1-light) rgba(255,255,255, 0.8);
+}
+
+svg #panel1-lamp-licht {
+    animation: flicker 3s ease-in-out infinite;
+}
+
+.flicker{
+	animation: flicker 10s infinite;
+}
+
+@keyframes flicker {
+	0%, 20%, 24%, 60%, 64%, 65%, 77%, 100% {
+		opacity: .9;
+	}
+	20.5%, 24.5%, 63%, 65.5%, 66%, 76% {
+		opacity: 0.4;
+	}
+}
+
+svg #panel1-gradient {
+    fill: url(#panel1-wall) rgba(200,200,200, 1);
+}
+
+svg #panel1-karakter2-fill path,
+svg #panel1-karakter1-fill path {
+    fill: rgba(255, 255, 255, 0.8);
+}
+
+svg #panel1-frame-light {
+    fill: rgba(86, 86, 86, 1);
+}
+
+svg #panel1-frame-dark {
+    fill: rgba(53, 53, 53, 1);
+}
+
+/*
+========================================
+Intro Styling
+========================================
+*/
+
+#intro {
+    grid-column: 1/9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    background-color: black;
+    color: white;
+}
+
+.metadata {
+    display: grid;
+    grid-template-columns: 2vw 1fr 1fr 1fr 1fr 1fr 1fr 2vw;
+    grid-column-gap: 10px;
+    grid-column: 1/9;
+    z-index: 1;
+    opacity: 0;
+    transform: translateY(3em);
+    transition: all .4s ease-out;
+}
+
+.metadata div:first-of-type {
+    grid-column: 4/6;
+    grid-row: 3/4;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.metadata h3 {
+    grid-column: 4/6;
+    grid-row: 1/2;
+    margin-bottom: 1em;
+}
+
+.metadata h3 ~ h4 {
+    grid-column: 4/6;
+    grid-row: 2/3;
+    margin-bottom: 5em;
+}
+
+.metadata > p:first-of-type {
+    grid-column: 4/6;
+    grid-row: 4/5;
+}
+
+.metadata > p:last-of-type {
+    grid-column: 4/6;
+    grid-row: 5/6;
+}
+
+.metadata h4 {
+    margin-bottom: 2em;
+    text-align: center;
+    color: grey;
+}
+
+.metadata p + p {
+    margin-top: 1em;
+}
+
+
+
+/*
+========================================
+Main Styling
+========================================
+*/
+
+main {
+    display: grid;
+    grid-template-columns: inherit;
+    grid-column: 1/9;
+}
+
+/*
+========================================
+Panels Styling
+========================================
+*/
+
+.grid {
+    display: grid;
+    grid-template-columns: inherit;
+    grid-column: 1/9;
+}
+
+.panel {
+    display: grid;
+    grid-template-columns: inherit;
+    grid-column: 1/9;
+    height: 100vh;
+}
+
+.panel p {
+    grid-column: 2/8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.panel:nth-of-type(1) p,
+.panel:nth-of-type(3) p {
+    grid-column: 5/8;
+}
+
+.panel:nth-of-type(2) p,
+.panel:nth-of-type(5) p,
+.panel:nth-of-type(6) p,
+.panel:nth-of-type(7) p {
+    grid-column: 4/6;
+}
+
+/*
+========================================
+Sidescroll Panels Styling
+========================================
+*/
+
+#white-space {
+    position: relative;
+    grid-column: 1/9;
+    height: 300vh;
+    background-color: turquoise;
+}
+
+.sideScroll {
+    position: absolute;
+    top: 0%;
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+    width: 300vw;
+/*    animation: moveDown 3s linear forwards;*/
+}
+
+/*
+@keyframes moveDown {
+    from {
+        bottom: 0%;
+    } to {
+        bottom: 84.33%;
+    }
+}
+*/
+
+.sideScroll div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+.sideScroll div:nth-of-type(1) {
+    background-color: red;
+}
+
+.sideScroll div:nth-of-type(2) {
+    background-color: blue;
+}
+
+.sideScroll div:nth-of-type(3) {
+    background-color: green;
+}
