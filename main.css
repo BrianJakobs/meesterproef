@@ -72,6 +72,16 @@ p {
     font-size: 1em;
     line-height: 1.2em;
     letter-spacing: 0.01em;
+    text-align: center;
+}
+
+a {
+    font-family: 'Neuton', serif;
+    Font-Family: 'Overpass', Sans-Serif;
+    font-size: 1em;
+    line-height: 1.2em;
+    letter-spacing: 0.01em;
+    text-align: center;
 }
 
 /*
@@ -107,6 +117,11 @@ Parallax Animation
 main .show {
     opacity: 1;
     transform: translateY(0);
+}
+
+main section.panel span.show {
+    opacity: 1;
+    transform: translateY(0) translateX(0);
 }
 
 .sideScroll.fixed {
@@ -361,17 +376,180 @@ Panels Styling
     align-items: center;
 }
 
-.panel:nth-of-type(1) p,
-.panel:nth-of-type(3) p {
-    grid-column: 5/8;
+/*p*/
+
+.panel:nth-of-type(6) p,
+.panel:nth-of-type(12) p,
+.panel:nth-of-type(15) p,
+.panel:nth-of-type(18) p {
+    grid-column: 2/4;
 }
 
 .panel:nth-of-type(2) p,
 .panel:nth-of-type(5) p,
-.panel:nth-of-type(6) p,
-.panel:nth-of-type(7) p {
+.panel:nth-of-type(7) p,
+.panel:nth-of-type(9) p,
+.panel:nth-of-type(10) p,
+.panel:nth-of-type(12) p,
+.panel:nth-of-type(14) p,
+.panel:nth-of-type(16) p,
+.panel:nth-of-type(19) p {
     grid-column: 4/6;
 }
+
+.panel:nth-of-type(1) p,
+.panel:nth-of-type(3) p,
+.panel:nth-of-type(8) p,
+.panel:nth-of-type(11) p,
+.panel:nth-of-type(13) p,
+.panel:nth-of-type(14) p,
+.panel:nth-of-type(17) p {
+    grid-column: 5/8;
+}
+
+/*SVG*/
+
+.panel:nth-of-type(6) .images,
+.panel:nth-of-type(12) .images,
+.panel:nth-of-type(15) .images,
+.panel:nth-of-type(18) .images {
+    grid-column: 5/8;
+}
+
+.panel:nth-of-type(2) .images,
+.panel:nth-of-type(5) .images,
+.panel:nth-of-type(7) .images,
+.panel:nth-of-type(9) .images,
+.panel:nth-of-type(10) .images,
+.panel:nth-of-type(12) svg,
+.panel:nth-of-type(14) .images,
+.panel:nth-of-type(16) .images,
+.panel:nth-of-type(19) .images {
+    grid-column: 4/6;
+}
+
+.panel:nth-of-type(1) .images,
+.panel:nth-of-type(3) .images,
+.panel:nth-of-type(8) .images,
+.panel:nth-of-type(11) .images,
+.panel:nth-of-type(13) .images,
+.panel:nth-of-type(14) .images,
+.panel:nth-of-type(17) .images {
+    grid-column: 2/4;
+}
+
+.panel .images {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.images svg path {
+    fill: none;
+    stroke: white;
+    stroke-width: 4px;
+    stroke-linecap: round;
+}
+
+#panel2-background path {
+    stroke: none;
+    fill: rgba(0, 0, 0, 1);
+}
+
+.panel:nth-of-type(1) .images svg {
+    transform: translateX(10vw);
+}
+
+.panel:nth-of-type(1) p {
+    grid-row: 1/2;
+}
+
+.panel:nth-of-type(7) {
+    grid-column: 1/9;
+}
+
+.panel:nth-of-type(7) p:nth-of-type(1) {
+    grid-column: 2/4;
+    grid-row: 1/2;
+}
+
+.panel:nth-of-type(7) p:nth-of-type(2) {
+    grid-column: 4/6;
+    grid-row: 2/3;
+}
+
+.panel:nth-of-type(7) p:nth-of-type(3) {
+    grid-column: 6/8;
+    grid-row: 3/4;
+}
+
+.panel:nth-of-type(9) p span {
+    opacity: 0;
+    transform: translateY(-3em) translateX(-3em);
+    transition: all .4s ease-out;
+}
+
+.panel:nth-of-type(9) p span + span {
+    margin-left: 3em;
+}
+
+.panel:nth-of-type(9) p span:nth-of-type(1) {
+    margin-top: -25em;
+}
+
+.panel:nth-of-type(9) p span:nth-of-type(2) {
+    margin-top: -20em;
+}
+
+.panel:nth-of-type(9) p span:nth-of-type(3) {
+    margin-top: -15em;
+}
+.panel:nth-of-type(9) p span:nth-of-type(4) {
+    margin-top: -10em;
+}
+
+.panel:nth-of-type(9) p span:nth-of-type(5) {
+    margin-top: -5em;
+}
+
+.panel:nth-of-type(9) p span:nth-of-type(6) {
+    margin-top: 0em;
+}
+
+.panel:nth-of-type(9) p span:nth-of-type(7) {
+    margin-top: 5em;
+}
+
+.panel:nth-of-type(9) p span:nth-of-type(8) {
+    margin-top: 10em;
+}
+
+.panel:nth-of-type(9) p span:nth-of-type(9) {
+    margin-top: 15em;
+}
+
+.panel:nth-of-type(18) p {
+    animation: kick 1s ease-out forwards;
+    animation-delay: 2s;
+}
+
+/*
+.kick {
+    animation: kick 3s ease-in-out infinite;
+    animation-delay: 1s;  
+}
+*/
+
+@keyframes kick {
+	0% {  
+    }
+	
+    100% {
+		transform: translateX(48vw);
+	}
+}
+
 
 /*
 ========================================
@@ -379,11 +557,12 @@ Sidescroll Panels Styling
 ========================================
 */
 
+/*Bron Batuhan heeft het idee gegeven om het met een beweegende div te doen*/
 #white-space {
     position: relative;
     grid-column: 1/9;
-    height: 300vh;
-    background-color: turquoise;
+    height: 248vw;
+    background-color: black;
 }
 
 .sideScroll {
@@ -393,35 +572,111 @@ Sidescroll Panels Styling
     flex-direction: row;
     height: 100vh;
     width: 300vw;
-/*    animation: moveDown 3s linear forwards;*/
+/*    transform: translateX(-66.67%);*/
+/*    right: 0;*/
 }
 
+.sideScroll > div {
+    display: grid;
+    grid-template-columns: 2vw 1fr 1fr 1fr 1fr 1fr 1fr 2vw;
 /*
-@keyframes moveDown {
-    from {
-        bottom: 0%;
-    } to {
-        bottom: 84.33%;
-    }
-}
-*/
-
-.sideScroll div {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+*/
     width: 100vw;
     height: 100vh;
 }
 
-.sideScroll div:nth-of-type(1) {
-    background-color: red;
+.sideScroll > div div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-.sideScroll div:nth-of-type(2) {
-    background-color: blue;
+
+.sideScroll > div div:first-of-type {
+    grid-column: 1/5;
+    grid-row: 1/2;
 }
 
-.sideScroll div:nth-of-type(3) {
-    background-color: green;
+.sideScroll > div div:last-of-type {
+    grid-column: 5/9;
+    grid-row: 1/2;
+}
+
+.sideScroll > div p {
+    color: #fff;
+    max-width: 80%;
+}
+
+.sideScroll > div a {
+    text-decoration: none;
+    color: #fff;
+    background-color: #000;
+    padding: 1em;
+    transform: translateY(15em);
+}
+
+.sideScroll > div h3  {
+    color: #fff;
+    text-align: center;
+    max-width: 80%;
+}
+
+.sideScroll > div:nth-of-type(1) div:nth-of-type(2) svg {
+    position: absolute;
+    top: 0;
+    left: 16.6%;
+    height: 100vh;
+    width: auto;
+}
+
+.sideScroll > div:nth-of-type(1) div:nth-of-type(2) {
+    background-image: url(assets/images/IS.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center; 
+}
+
+.sideScroll > div:nth-of-type(2) p  {
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    transform: translateY(-10em);
+}
+
+.sideScroll > div:nth-of-type(2) div:nth-of-type(1) {
+    background-image: url(assets/images/jongetje-op-boot.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center; 
+    
+}
+
+.sideScroll > div:nth-of-type(2) div:nth-of-type(2) {
+    background-image: url(assets/images/vluchtelingen.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: left; 
+}
+
+.sideScroll > div:nth-of-type(3) div:nth-of-type(1) {
+    background-image: url(assets/images/docent.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center; 
+}
+
+.sideScroll > div:nth-of-type(3) div:nth-of-type(1) svg {
+    position: absolute;
+    top: 0;
+    right: 16.6%;
+    height: 100vh;
+    width: auto;
 }
