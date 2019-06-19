@@ -21,6 +21,15 @@ var panelOne = document.querySelector('.panel:nth-of-type(3)'),
     span7 = document.querySelector('main section.panel:nth-of-type(8) p span:nth-of-type(7)'),
     span8 = document.querySelector('main section.panel:nth-of-type(8) p span:nth-of-type(8)'),
     span9 = document.querySelector('main section.panel:nth-of-type(8) p span:nth-of-type(9)'),
+    shoe = document.querySelector('.panel:nth-of-type(17) .images'),
+    kickedText = document.querySelector('.panel:nth-of-type(17) p'),
+    choice = document.querySelector('.choice'),
+    button1goed = document.querySelector('.goed1'),
+    button1fout = document.querySelector('.fout1'),
+    button2goed = document.querySelector('.goed2'),
+    button2fout = document.querySelector('.fout2'),
+    result1 = document.querySelector('.result1'),
+    result2 = document.querySelector('.result2'),
 
     viewportCheck = function(Element) {
         var bounding = Element.getBoundingClientRect();
@@ -32,9 +41,36 @@ var panelOne = document.querySelector('.panel:nth-of-type(3)'),
 //    sideScrollAdd = function(Element) {
 //        var bounding = Element.getBoundingClientRect();
 //        return (
-//            bounding.top <= window.innerHeight && bounding.bottom >= 0
+//            bounding.top <= 0
+//        )
+//    },
+//    
+//    sideScrollRemove = function(Element) {
+//        var bounding = Element.getBoundingClientRect();
+//        return (
+//            bounding.bottom <= window.innerHeight
 //        )
 //    };
+
+button1fout.addEventListener('click', function () {
+    result1.classList.add('reveal');
+//    document.body.classList.toggle('goScroll');
+});
+
+button1goed.addEventListener('click', function () {
+    result1.classList.add('reveal');
+//    document.body.classList.toggle('goScroll');
+});
+
+button2fout.addEventListener('click', function () {
+    result2.classList.add('reveal');
+//    document.body.classList.toggle('goScroll');
+});
+
+button2goed.addEventListener('click', function () {
+    result2.classList.add('reveal');
+//    document.body.classList.toggle('goScroll');
+});
 
 window.addEventListener('scroll', function () {
     var startSide = whiteSpace.getBoundingClientRect(),
@@ -61,15 +97,22 @@ if (viewportCheck(metaData)) {
     span8.classList.add('show');
 } if (viewportCheck(span9)) {
     span9.classList.add('show');
-}
+} if (viewportCheck(kickedText)) {
+    shoe.classList.add('kickshoe');
+    kickedText.classList.add('kick');
+} 
     
-//    startSide.top = start
-//    startSide.bottom = eind
     
-//    console.log(startSide.top + startSide.bottom);
-//    console.log(startSide.top);
-//    console.log(startSide.bottom);
-//    console.log(window.innerHeight);
+//if (sideScrollAdd(choice)) {
+//    document.body.classList.add('stopScroll');
+//}
+//    
+//if (sideScrollRemove(choice)) {
+//    console.log('alles weg');
+//    document.body.classList.remove('stopScroll');
+//    document.body.classList.remove('goScroll');
+//}
+
 
 var currentX = sideScroll.style.transform;
     

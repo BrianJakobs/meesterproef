@@ -105,15 +105,17 @@ Sections Styling
     background-size: cover;
     z-index: -1;
     grid-column: 1/9;
+    box-shadow: inset 0 0 10em 3em rgba(0,0,0, .75);
 }
 
-#vignette {
-    position: fixed;
+img {
+    position: absolute;
     top: 0;
-    height: 100vh;
-    width: 100%;
-    z-index: 5;
-    box-shadow: inset 0 0 5em 1em rgba(0,0,0,0.25);
+    z-index: 100;
+    width: 15%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%)
 }
 
 /*
@@ -141,6 +143,21 @@ main section.panel span.show {
     bottom: 0;
     top: auto;
 }
+
+div.reveal {
+    transform: translateX(0vw);
+    opacity: 1;
+}
+
+/*
+.stopScroll {
+    overflow:hidden;
+}
+
+.goScroll {
+    overflow: initial;
+}
+*/
 
 /*
 ========================================
@@ -609,6 +626,11 @@ Panels SVG Styling
     transform: translateY(-6vh);
 }
 
+.panel:nth-of-type(5) .images svg {
+    height: 100%;
+    width: auto;
+}
+
 .panel:nth-of-type(5) .images:last-of-type {
     transform: translateY(6vh);
 }
@@ -633,6 +655,11 @@ Panels SVG Styling
 
 .panel:nth-of-type(5) #panel5-background {
     fill: rgba(86, 86, 86, 1);
+}
+
+.panel:nth-child(6) .images svg {
+    height: 90%;
+    width: auto;
 }
 
 .panel:nth-of-type(6) .images:first-of-type {
@@ -661,6 +688,10 @@ Panels SVG Styling
     stroke-linecap: round;
 }
 
+.panel:nth-of-type(6) #panel6-background {
+    fill: rgba(86, 86, 86, 1);
+}
+
 .panel:nth-of-type(7) svg {
     height: 90%;
     stroke: rgba(0, 0, 0, 1);
@@ -673,8 +704,8 @@ Panels SVG Styling
     fill: rgba(86, 86, 86, 1);
 }
 
-.panel:nth-of-type(6) #panel6-background {
-    fill: rgba(86, 86, 86, 1);
+.panel:nth-of-type(8) .images {
+    transform: translateX(20%);
 }
 
 .panel:nth-of-type(8) svg {
@@ -727,7 +758,7 @@ Panels SVG Styling
     background-image: url(assets/images/tekst-mask.svg);
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: top;
+    background-position: bottom;
 }
 
 .panel:nth-of-type(11) p {
@@ -833,6 +864,14 @@ Panels SVG Styling
 .panel:nth-of-type(17) .images {
     grid-column: 2/5;
     grid-row: 1/2;
+}
+
+.kick {
+    animation: kick .8s ease-out forwards;
+    animation-delay: 1s;
+}
+
+.kickshoe {
     animation: kickshoe 0.8s ease-out forwards;
     animation-delay: .59s;
 }
@@ -851,11 +890,6 @@ Panels SVG Styling
     fill: rgba(86, 86, 86, 1);
 }
 
-.panel:nth-of-type(17) p {
-    animation: kick .8s ease-out forwards;
-    animation-delay: 1s;
-}
-
 .panel:nth-of-type(18) {
     height: 60vh;
     background-image: url(assets/images/tekst-mask.svg);
@@ -869,13 +903,6 @@ Panels SVG Styling
     font-size: 1em;
     color: rgba(255, 255, 255, 1);
 }
-
-/*
-.kick {
-    animation: kick 3s ease-in-out infinite;
-    animation-delay: 1s;  
-}
-*/
 
 @keyframes kick {
 	0% {  
@@ -1125,8 +1152,6 @@ Choices Styling
     display: block;
     grid-column: 1/5;
     grid-row: 2/2;
-    height: 100%;
-/*    background-image: url(assets/images/docent.jpg);*/
 }
 
 .choice button:hover,
@@ -1142,6 +1167,7 @@ Choices Styling
 }
 
 .resultaat {
+    transition: all 1s ease;
     position: absolute;
     display: flex;
     flex-direction: column;
@@ -1151,10 +1177,30 @@ Choices Styling
     height: 100vh;
     width: 100%;
     background: rgba(255, 255, 255, 1);
-    visibility: hidden;
+    opacity: 1;
+    transform: translateX(-100vw);
 }
 
 .resultaat p:last-of-type {
     position: absolute;
     bottom: 10vh;
+}
+
+.footer {
+    width: 100%;
+    height: 10vh;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer a {
+    color: white;
+    text-decoration: underline;
+}
+
+.footer a:hover {
+    color: rgba(230, 35, 35, 1);
 }
